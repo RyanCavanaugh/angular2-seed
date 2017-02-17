@@ -1,4 +1,4 @@
-## angular2-seed
+## angular2-seed (with TypeScript)
 
 A simple starter project demonstrating the basic concepts of Angular 2.
 
@@ -12,3 +12,33 @@ A simple starter project demonstrating the basic concepts of Angular 2.
 - run `npm start` to fire up dev server
 - open browser to [`http://localhost:3000`](http://localhost:3000)
 - if you want to use other port, open `package.json` file, then change port in `--port 3000` script
+
+### TypeScript Language Service Demo
+
+- Open the folder as a workspace in VS Code
+- Open src\app\app.component.ts
+- When prompted, choose to use the "workspace" version of TypeScript
+- You should see an error in the template string:
+```
+  template: '<div title={{ba}}></div>'
+                          ~~ error: 'ba' is not defined
+```
+- Place the caret in the attribute template, delete 'ba', and press Ctrl-Space
+- You should see the class members:
+```
+@Component({
+  selector: 'app',
+  template: '<div title={{}}></div>'
+                          foo
+                          bar
+})
+export class AppComponent {
+  foo: string;
+  bar: number;
+}
+
+```
+- Select 'foo'
+- Press F12 to *Go to Definition*
+- The caret is now on the `foo` member of the component class
+
