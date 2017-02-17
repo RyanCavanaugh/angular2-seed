@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'app',
-  templateUrl: './app.component.html',
+  template: '<div title={{foo}}></div>'
 })
 export class AppComponent {
+  foo: string;
 }
